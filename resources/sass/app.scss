@@ -1,0 +1,24 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import "~animate.css/animate.min.css";
+@import "~font-awesome/scss/font-awesome.scss";
+
+.py-4{
+	padding:0px !important;
+}
+.btn-canadia{
+	height: 47px !important;
+    font-size: 18px;
+    background-color: $canadia-primary;
+    box-shadow: none !important;
+    border: 0px !important;
+}
+#frontend-create-account{
+	background-color: #f8fafc;
+}
