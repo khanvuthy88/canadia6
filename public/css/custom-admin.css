@@ -1,0 +1,63 @@
+.content-header h1.title {
+  float: left;
+  margin-right: 20px;
+  padding-top: 4px;
+}
+
+.content-header button a {
+  color: #fff;
+}
+
+#employement_detail #radio-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#employement_detail #radio-button label {
+  flex: none;
+  width: 24.5%;
+}
+
+#employement_detail #radio-button label.active {
+  background-color: #ef5350 !important;
+  border-color: #ef5350;
+  color: #fff !important;
+}
+
+#purpose_of_banking_service div .btn-group {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#purpose_of_banking_service div .btn-group label {
+  width: 24.5%;
+}
+
+#purpose_of_banking_service div .btn-group label.active {
+  background-color: #ef5350 !important;
+  border-color: #ef5350;
+  color: #fff !important;
+}
+
+#show_account_info div .modal-body div div table {
+  width: 100%;
+}
+
+#show_account_info div .modal-body div div table tr th,
+#show_account_info div .modal-body div div table tr td {
+  border: 1px solid #eee;
+}
+
+#show_account_info div .modal-body div div table tr th {
+  padding: 10px 0px;
+  padding-left: 10px;
+  margin-right: 10px;
+  background-color: #f4f4f4;
+}
+
+#show_account_info div .modal-body div div table tr td {
+  padding-left: 10px;
+}
+

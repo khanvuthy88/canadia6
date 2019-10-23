@@ -25,6 +25,8 @@
     },
     "dependencies": {
         "animate.css": "^3.7.2",
-        "font-awesome": "^4.7.0"
+        "font-awesome": "^4.7.0",
+        "moment": "^2.24.0",
+        "sweetalert2": "^8.17.5"
     }
 }

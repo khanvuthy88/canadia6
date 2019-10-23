@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@charset "UTF-8";
 
 /*!
  * animate.css -https://daneden.github.io/animate.css/
@@ -13711,6 +13711,108 @@ a.text-dark:focus {
 }
 
 #frontend-create-account {
-  background-color: #f8fafc;
+  background-color: #fff;
+}
+
+#frontend-create-account .headline_block {
+  padding: 15px;
+  margin: auto;
+  background-color: #eee;
+  color: #ef5350;
+}
+
+#frontend-create-account .headline_block .block {
+  margin: 15px auto;
+  max-width: 400px;
+}
+
+#frontend-create-account .headline_block .block .icon {
+  float: left;
+}
+
+#frontend-create-account .headline_block .block .icon img {
+  max-width: 100px;
+}
+
+#frontend-create-account .headline_block .block .icon .fa {
+  font-size: 90px;
+  vertical-align: middle;
+  line-height: initial;
+}
+
+#frontend-create-account .headline_block .block .content {
+  float: right;
+}
+
+#frontend-create-account .headline_block .block .content h1 {
+  font-size: 30px;
+}
+
+#frontend-create-account form {
+  background: #fff;
+}
+
+#employement_detail #radio-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#employement_detail #radio-button .btn {
+  flex: none;
+  width: 24.5%;
+}
+
+#employement_detail #radio-button .bg-light.active {
+  background-color: #ef5350 !important;
+  border-color: #ef5350;
+  color: #fff !important;
+}
+
+#reasons_group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+#reasons_group label {
+  width: 24%;
+}
+
+#reasons_group .btn {
+  flex: none;
+}
+
+#reasons_group .bg-light.active {
+  background-color: #ef5350 !important;
+  border-color: #ef5350;
+  color: #fff !important;
+}
+
+#purpose_of_banking_service #reasons_group {
+  margin-bottom: 30px;
+}
+
+#purpose_of_banking_service #reasons_group label {
+  width: 33%;
+}
+
+#purpose_of_banking_service #another_reason {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+#purpose_of_banking_service #another_reason label {
+  width: 7%;
+  float: left;
+}
+
+#purpose_of_banking_service #another_reason label.btn {
+  padding: 0px !important;
+}
+
+#purpose_of_banking_service #another_reason input {
+  width: 50%;
+  float: left;
 }
 

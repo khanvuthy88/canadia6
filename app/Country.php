@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Country extends Model
 {
-    //
+    
+    public function Accounts()
+    {
+    	return $this->hasMany(Account::class);
+    }
 }

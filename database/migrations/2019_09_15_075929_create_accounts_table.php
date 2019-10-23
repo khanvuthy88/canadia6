@@ -53,18 +53,11 @@ class CreateAccountsTable extends Migration
 
             $table->unsignedBigInteger('branch_location_id')->nullable();
             $table->foreign('branch_location_id')->references('id')->on('branch_locations');
-
-            $table->unsignedBigInteger('province_id')->nullable();
-            $table->foreign('province_id')->references('id')->on('provinces');
-
-            $table->unsignedBigInteger('district_id')->nullable();
-            $table->foreign('district_id')->references('id')->on('districts');
-
-            $table->unsignedBigInteger('commune_id')->nullable();
-            $table->foreign('commune_id')->references('id')->on('communes');
-
             $table->unsignedBigInteger('village_id')->nullable();
-            $table->foreign('village_id')->references('id')->on('villages');
+            $table->unsignedBigInteger('commune_id')->nullable();
+            $table->unsignedBigInteger('district_id')->nullable();
+            $table->unsignedBigInteger('province_id')->nullable();
+            $table->boolean('is_active')->default(1);
             $table->timestamps();
         });
     }

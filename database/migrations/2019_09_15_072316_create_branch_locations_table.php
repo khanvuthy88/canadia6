@@ -19,6 +19,10 @@ class CreateBranchLocationsTable extends Migration
             $table->string('longitude')->nullable();
             $table->string('latitude')->nullable();
             $table->text('address')->nullable();
+            $table->unsignedBigInteger('village_id')->nullable();
+            $table->unsignedBigInteger('commune_id')->nullable();
+            $table->unsignedBigInteger('district_id')->nullable();
+            $table->unsignedBigInteger('province_id')->nullable();
             $table->timestamps();
         });
     }

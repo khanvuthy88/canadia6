@@ -1,0 +1,77 @@
+$canadia-primary: #ef5350;
+$canadia-secondary: #00bcd4;
+
+.content-header{
+	h1{
+		&.title{
+			float: left;
+			margin-right: 20px;
+    		padding-top: 4px;
+		}
+	}
+	button{
+		a{
+			color: #fff;
+		}
+	}
+}
+
+#employement_detail #radio-button{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	label{
+		flex: none;
+    	width: 24.5%;
+		&.active{
+			background-color: $canadia-primary !important;
+			border-color: $canadia-primary;
+			color: #fff !important;
+		}
+	}
+}
+#purpose_of_banking_service{
+	div{
+		.btn-group{
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+			label{
+				width: 24.5%;
+				&.active{
+					background-color: $canadia-primary !important;
+					border-color: $canadia-primary;
+					color: #fff !important;
+				}
+			}
+		}
+	}
+}
+
+#show_account_info{
+	div{
+		.modal-body{
+			div{
+				div{
+					table{
+						width: 100%;
+						tr{
+							th,td{
+								border: 1px solid #eee;
+							}
+							th{
+								padding: 10px 0px;
+								padding-left: 10px;
+								margin-right: 10px;
+								background-color: #f4f4f4;
+							}
+							td{
+								padding-left: 10px;    							
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
