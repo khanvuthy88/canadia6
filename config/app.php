@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Canadia Bank PLC'),
+    'name' => 'Canadia Bank PLC',
 
     /*
     |--------------------------------------------------------------------------

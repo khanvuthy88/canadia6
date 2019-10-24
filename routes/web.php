@@ -28,8 +28,9 @@ Route::prefix('frontend')->group(function(){
 
 	// Ajax request 
 	Route::post('/ajax-request/district/{province}','FrontendAccountController@getDistrictByProvinceid');
-	Route::post('/ajax-request/commune/{district}','FrontendAccountController@getDistrictByDistrictid');
+	Route::post('/ajax-request/commune/{district}','FrontendAccountController@getCommuneByDistrictid');
 	Route::post('/ajax-request/village/{commune}','FrontendAccountController@getVillageByCommuneid');
+	Route::post('/ajax-request/employment/{employment}','FrontendAccountController@getSubEmployment');
 	
 });
 

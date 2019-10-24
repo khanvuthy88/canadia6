@@ -57194,7 +57194,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "ul",
-    { staticClass: "navbar-nav" },
+    { staticClass: "navbar-nav ml-auto" },
     [
       _c("li", { staticClass: "nav-item" }, [
         _c(
@@ -70606,8 +70606,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! c:\xampp\htdocs\canadia6.local\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! c:\xampp\htdocs\canadia6.local\resources\sass\custom-admin.scss */"./resources/sass/custom-admin.scss");
+__webpack_require__(/*! c:\xampp\htdocs\canadia.local\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! c:\xampp\htdocs\canadia.local\resources\sass\custom-admin.scss */"./resources/sass/custom-admin.scss");
 
 
 /***/ })

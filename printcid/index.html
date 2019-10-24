@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Print Customer Information</title>
+</head>
+<style type="text/css">
+body { background-color:#999;}
+ .form { width:290px; height:auto; margin-left:auto; margin-right:auto; background-color:#FFF; padding:15px; margin-top:70px;}
+ p { text-align:center;}
+</style>
+<body>
+  <div class="form">
+      <form action="find.php" method="post">
+            <p>Input customer phone:</p>
+            <input type="text" style=" width:95%; margin-bottom:10px; padding:5px;" name="phone">
+          
+            <input type="submit" style=" width:49%; margin-bottom:15px; padding:5px;" value="Print">
+            <input type="button" onclick="op()" style=" width:49%; margin-bottom:15px; padding:5px;" value="Manaul Print">
+            
+      </form>
+      
+       
+   </div>   
+</body>
+</html>
+<script type="text/javascript">
+   function op() {
+	    
+		   window.location.replace("printm.php")
+	    
+	   }
+</script>

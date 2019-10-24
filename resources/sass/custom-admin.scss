@@ -1,5 +1,45 @@
-$canadia-primary: #ef5350;
+$canadia-primary: #dc3b31;
+$canadia-head-color:#dc3b31;
+$canadia-white-color: #ffffff;
 $canadia-secondary: #00bcd4;
+
+.btn-canadia{
+	background-color:$canadia-primary !important;
+}
+button{
+	&.next{
+		background-color: #ca362c;
+	    color: #ffffff;
+	    border: none;
+	    padding: 10px 30px;
+	    font-size: 17px;
+	    cursor: pointer;
+	    border-radius: 5px;
+	}
+	&.previous{
+		background-color: #bbbbbb;
+	    color: #ffffff;
+	    border: none;
+	    padding: 10px 30px;
+	    font-size: 17px;
+	    cursor: pointer;
+	    border-radius: 5px;
+	}
+}
+nav{
+	&.bg-white{
+		background-color: $canadia-head-color !important;
+	}
+	.navbar-brand{
+		img{
+			width: 200px;
+			// height: 65px;
+		}
+	}
+	.nav-link {
+		color: $canadia-white-color !important;
+	}
+}
 
 .content-header{
 	h1{
@@ -72,6 +112,123 @@ $canadia-secondary: #00bcd4;
 					}
 				}
 			}
+		}
+	}
+}
+
+
+#frontend-create-account{
+	background-color: #fff;
+	.headline_block{
+		padding: 8px;
+		margin: auto;
+		background-color: #eee;
+		color: $canadia-primary;
+		.block{
+			margin: 8px auto;
+			max-width: 300px;
+			.icon{
+				float: left;
+				margin-right: 10px;
+				img{
+					max-width: 100px;
+					width:50px;
+					height:50px;
+				}
+				.fa{
+					font-size: 90px;
+				    vertical-align: middle;
+				    line-height: initial;
+				}
+			}
+			.content{
+				float: left;
+				h1{
+					font-size: 18px;
+				}
+			}
+		}
+	}
+	form{
+		background: #fff;
+		margin-bottom: 30px;
+	}
+}
+#employement_detail{
+	#radio-button{
+		width: 100%;
+	    display: flex;
+	    justify-content: space-between;
+		.btn{
+			flex:none;
+			width: 24.5%;
+		}
+		.bg-light{
+			&.active{
+				background-color: #ef5350 !important;
+				border-color: #ef5350;
+				color: #fff !important;
+			}
+		}
+	}	
+}
+#reasons_group{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+	label{
+		width: 24%;
+	}
+	.btn{
+		flex:none;
+	}
+	.bg-light{
+		&.active{
+			background-color: #ef5350 !important;
+			border-color: #ef5350;
+			color: #fff !important;
+		}
+	}
+}
+#purpose_of_banking_service{
+	#reasons_group{
+		margin-bottom: 30px;
+		label{
+			width: 33%;
+		}
+	}
+	#another_reason{
+		display: flex;
+		margin-bottom: 30px;
+		label{
+			width: 7%;
+			float: left;
+			&.btn{
+				padding: 0px !important;
+			}
+		}
+		input{
+			width: 50%;
+			float: left;
+		}
+	}
+}
+
+form{
+	&#fronted-account{
+		select{
+			height: calc(1.5em + .75rem + 2px);
+		    padding: .375rem 1.75rem .375rem .75rem;
+		    font-size: 1rem;
+		    font-weight: 400;
+		    line-height: 1.5;
+		    color: #495057;
+		    vertical-align: middle;
+		    background: url(/images/icons/select_field.svg) no-repeat right .75rem center/8px 10px;
+		    background-color: #fff;
+		    border: 1px solid #ced4da;
+		    border-radius: .25rem;
+		    -webkit-appearance: none;
 		}
 	}
 }
