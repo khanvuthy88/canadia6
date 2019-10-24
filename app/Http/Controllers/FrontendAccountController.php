@@ -132,7 +132,7 @@ class FrontendAccountController extends Controller
         // After save file to database, below code will create new file with telephone number as name
         $file_content = '';
         $file_name = $account->phone;
-        $file_content.=$account->first_name.'|'.$account->family_name.'|'.$account->dob.'|'.$account->gender.'|'.$account->married_status.'|'.$account->place_of_birth.'|'.$account->nationality.'|'.$account->country_of_birth;
+        $file_content.=$account->first_name.'|'.$account->family_name.'|'.$account->dob.'|'.$account->gender.'|'.$account->married_status.'|'.$account->place_of_birth.'|'.$account->nationality.'|'.$account->country_of_birth.'|'.$account->type_legal.'|'.$account->issuring_country.'|'.$account->id_number.'|'.$account->issued_date.'|'.$account->expiry_date.'|'.$account->house_number.'|'.$account->street.'|'.$account->province_code.'|'.$account->district_code.'|'.$account->commune_code.'|'.$account->village_code.'|'.$account->email.'|'.$account->phone.'|'.$account->employement_detail.'|'.$account->sub_employement_detail.'|'.$account->institute_name.'|'.$account->insitution_address.'|'.$account->source_of_income.'|'.$account->monthly_income.'|'.$account->why_open_account.'|'.$account->orther.'|'.$account->is_us_person.'|'.$account->is_us_person_code.'|'.$account->is_us_person_yes_code.'|'.$account->acc_currency.'|'.$account->acc_type;
         
 
         Storage::disk('public')->put($file_name.'.txt', $file_content);
