@@ -70588,10 +70588,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/custom-admin.scss":
-/*!******************************************!*\
-  !*** ./resources/sass/custom-admin.scss ***!
-  \******************************************/
+/***/ "./resources/sass/print.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/print.scss ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -70600,14 +70600,14 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!**********************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/custom-admin.scss ***!
-  \**********************************************************************/
+/*!***************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/print.scss ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! c:\xampp\htdocs\canadia.local\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! c:\xampp\htdocs\canadia.local\resources\sass\custom-admin.scss */"./resources/sass/custom-admin.scss");
+module.exports = __webpack_require__(/*! c:\xampp\htdocs\canadia.local\resources\sass\print.scss */"./resources/sass/print.scss");
 
 
 /***/ })

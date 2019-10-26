@@ -209,4 +209,9 @@ class FrontendAccountController extends Controller
         $employment_array = Arr::pluck(EmploymentStatus::where('parent_id',$employment->id)->get(),'name','id');
         return $employment_array;
     }
+
+    public function printAccountInfo()
+    {
+        return view('account.print-account');
+    }
 }

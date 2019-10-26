@@ -21,6 +21,8 @@ Route::prefix('frontend')->group(function(){
 	Route::post('/account/type/{account}/create','FrontendAccountController@store')->name('frontend-account-type-create');
 	Route::get('/account/created-success/{account}','FrontendAccountController@accountCreatedSuccess')->name('frontend-account-created-success');
 
+	Route::get('/account/account-information/','FrontendAccountController@printAccountInfo')->name('account.frontend.print.info');
+
 	Route::post('/account/type/dob-validate/{dob}','FrontendAccountController@dobValidtor');
 	Route::post('/account/type/id_card-validate/{id_number}','FrontendAccountController@idNumberValidator');
 	Route::post('/account/type/phone-validate/{phone}','FrontendAccountController@phoneNumberValidator');

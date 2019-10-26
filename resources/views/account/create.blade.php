@@ -621,19 +621,22 @@
 			$("#id_number").change(function(){
 				let id_number = $('#id_number').val();
 				let url = 'http://'+window.location.hostname+'/frontend/account/type/id_card-validate';
-				hotValidateField(id_number,url);
+				let message = "ID Number already exist.";
+				hotValidateField(id_number,url, message);
 			});
 
 			$('#phone').change(function(){
 				let phone_number = $('#phone').val();
 				let url = 'http://'+window.location.hostname+'/frontend/account/type/phone-validate';
-				hotValidateField(phone_number, url);
+				let message = "Phone Number already exist.";
+				hotValidateField(phone_number, url, message);
 			});
 
 			$('#email').change(function(){
 				let email_address = $('#email').val();
 				let url = 'http://'+window.location.hostname+'/frontend/account/type/email-validate';
-				hotValidateField(email_address, url);
+				let message = "Email address already exist.";
+				hotValidateField(email_address, url, message);
 			});
 
 			$('#province_id').change(function(){
@@ -756,14 +759,14 @@
 				});
 			}
 
-			function hotValidateField(value, url) {
+			function hotValidateField(value, url, message = '') {
 				axios.post(url+'/'+value)
 					.then(res=>{
 						let return_data = res.data;
 						if(return_data == false){
 							Swal.fire({
 								  title: 'Error!',
-								  text: 'Do you want to continue',
+								  text: message,
 								  type: 'error',
 								  confirmButtonText: 'Cool'
 								});

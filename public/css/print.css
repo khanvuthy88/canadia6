@@ -1,0 +1,139 @@
+/* khmer */
+
+@font-face {
+  font-family: "Khmer";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Khmer"), url("/fonts/khmer/MjQImit_vPPwpG-Nrty0eQ.woff2") format("woff2");
+  unicode-range: U+1780-17FF, U+200C, U+25CC;
+}
+
+body {
+  background-color: #fff;
+  font-family: "Khmer";
+}
+
+body #app .py-4 {
+  margin: 30px auto;
+}
+
+h5.title {
+  color: #fff;
+  background-color: #cc342d;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+#header {
+  width: 100%;
+}
+
+#header .header img.logo {
+  max-width: 280px;
+}
+
+#header .header img.right-logo {
+  max-width: 341px;
+}
+
+#application_detail {
+  width: 100%;
+}
+
+#account_signing_instruction_and_specimen .block-info .account_signing_instruction_and_specimen {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#account_signing_instruction_and_specimen .block-info .account_signing_instruction_and_specimen div {
+  padding: 15px;
+  width: 100%;
+}
+
+#account_signing_instruction_and_specimen .block-info .account_signing_instruction_and_specimen div .block {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+#account_signing_instruction_and_specimen .block-info .account_signing_instruction_and_specimen div .block div {
+  width: 100%;
+  border: 0px !important;
+  padding: 0px;
+}
+
+#account_signing_instruction_and_specimen .block-info .account_signing_instruction_and_specimen div .block-100 {
+  width: 100%;
+}
+
+#account_signing_instruction_and_specimen .block-info .account_signing_instruction_and_specimen div .block-100 div {
+  display: block;
+  width: 100%;
+}
+
+#account_signing_instruction_and_specimen .block-info .account_signing_instruction_and_specimen div .block,
+#account_signing_instruction_and_specimen .block-info .account_signing_instruction_and_specimen div .block-100 {
+  border: 0px !important;
+  padding: 0px;
+}
+
+#account_signing_instruction_and_specimen .block-info .account_signing_instruction_and_specimen div:first-child {
+  border-right: 1px solid #000;
+}
+
+#account_signing_instruction_and_specimen .block-info .account_signing_instruction_and_specimen div:last-child {
+  border-left: 1px solid #000;
+}
+
+#application_detail .block-info,
+#desposit_product_service_detial .block-info,
+#deposit_product_detial .block-info,
+#customer_declaration .block-info,
+#account_signing_instruction_and_specimen .block-info,
+#for_bank_user_only .block-info {
+  width: 100%;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+#application_detail .block-info h5.sub-title,
+#desposit_product_service_detial .block-info h5.sub-title,
+#deposit_product_detial .block-info h5.sub-title,
+#customer_declaration .block-info h5.sub-title,
+#account_signing_instruction_and_specimen .block-info h5.sub-title,
+#for_bank_user_only .block-info h5.sub-title {
+  font-weight: bold;
+}
+
+#application_detail input,
+#desposit_product_service_detial input,
+#deposit_product_detial input,
+#customer_declaration input,
+#account_signing_instruction_and_specimen input,
+#for_bank_user_only input {
+  border: 0px;
+}
+
+#account_signing_instruction_and_specimen .block-info {
+  padding: 0px;
+}
+
+.cmb-100 {
+  margin-bottom: 100px;
+}
+
+@media print {
+  #application_detail,
+  #desposit_product_service_detial,
+  #deposit_product_detial,
+  #customer_declaration,
+  #account_signing_instruction_and_specimen,
+  #for_bank_user_only {
+    page-break-inside: avoid;
+  }
+}
+
