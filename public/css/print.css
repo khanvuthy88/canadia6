@@ -116,6 +116,8 @@ h5.title {
 #account_signing_instruction_and_specimen input,
 #for_bank_user_only input {
   border: 0px;
+  margin-left: 10px;
+  font-weight: bold;
 }
 
 #account_signing_instruction_and_specimen .block-info {

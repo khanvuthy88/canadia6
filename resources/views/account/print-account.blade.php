@@ -164,13 +164,14 @@
 							<div class="col-md-4">
 								<label>
 									Issue Date
-									{!! Form::text('issuing_date', null, []) !!}
+									{!! Form::date("issuing_date", \Illuminate\Support\Carbon::now(), []) !!}
+									{{-- {!! Form::text('issuing_date', null, []) !!} --}}
 								</label>
 							</div>
 							<div class="col-md-4">
 								<label>
 									Expire Date
-									{!! Form::text('expire_date', null, []) !!}
+									{!! Form::date('expire_date', \Illuminate\Support\Carbon::now(), []) !!}
 								</label>
 							</div>
 						</div>
