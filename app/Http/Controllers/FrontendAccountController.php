@@ -210,8 +210,31 @@ class FrontendAccountController extends Controller
         return $employment_array;
     }
 
-    public function printAccountInfo()
+    public function printAccountInfoTest(Request $request)
     {
-        return view('account.print-account');
+        if ($request['phone_number']) {
+            $value = $request['phone_number'];
+            $account = Account::where('phone',$value)->first();
+            if ($account) {
+                return view('account.print-account',compact('account'));
+            }
+            $account = new Account();
+            return view('account.print-account',compact('account'));
+        }
+        $account = new Account();
+        return view('account.print-account',compact('account'));
     }
+
+    public function printAccountInfo($value = '')
+    {
+        $account = Account::where('phone',$value)->first();
+        if ($account) {            
+            return view('account.print-account',compact('account'));
+        }else{
+            $account = new Account();
+            return view('account.print-account',compact('account'));
+        }
+        
+    }
+
 }

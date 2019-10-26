@@ -115,7 +115,7 @@ ul{
 }
 </style>
 <template>
-  <ul class="navbar-nav ml-auto">
+  <ul class="navbar-nav">
     <li class="nav-item">
       <a class="nav-link" v-on:click.stop="showModal = true">About Canadia bank</a>
     </li>

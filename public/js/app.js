@@ -57194,7 +57194,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "ul",
-    { staticClass: "navbar-nav ml-auto" },
+    { staticClass: "navbar-nav" },
     [
       _c("li", { staticClass: "nav-item" }, [
         _c(

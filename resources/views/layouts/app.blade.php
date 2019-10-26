@@ -35,9 +35,12 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">                    
-                        <menu-component></menu-component>
+                    <ul class="navbar-nav ml-auto">                       
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="modal" data-target="#looking_for_account_or_manual">Test</a>
+                        </li>
                     </ul>
+                    <menu-component></menu-component>
 
                     <!-- Right Side Of Navbar -->
                     <!-- <ul class="navbar-nav ml-auto"> -->
@@ -83,6 +86,44 @@
         </section>
         <movetop-component></movetop-component>
     </div>
+
+<!-- Modal -->
+<div class="modal fade" id="looking_for_account_or_manual" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Your phone number ?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        {!! Form::open([
+            'route'=>['account.frontend.print.info'],
+            'method'=>'post'
+            ]) !!}
+
+            <div class="form-row">
+                <div class="col-md-12 form-group">
+                    {!! Form::text('phone_number', null, ['class'=>'form-control']) !!}
+                    <small>Note : Keep it blank for field the form</small>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-12 form-group">
+                    {!! Form::submit('Submit', ['class'=>'btn btn-primary']) !!}
+                </div>
+            </div>
+
+        {!! Form::close() !!}
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+
     <script src="{{ asset('js/app.js') }}"></script>
     @yield('script')
 </body>

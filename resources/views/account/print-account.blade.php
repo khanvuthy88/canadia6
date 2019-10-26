@@ -51,7 +51,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="application_detail" class="mb-5">
+	<section id="application_detail" class="mt-2">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 mb-3">
@@ -90,13 +90,13 @@
 							<div class="col-md-6">
 								<label>
 									Family Name​
-									{!! Form::text('family_name', null, []) !!}
+									{!! Form::text('family_name', $account->exists  ? $account->family_name : NULL, []) !!}
 								</label>
 							</div>
 							<div class="col-md-6">
 								<label>
 									Fist Name
-									{!! Form::text('first_name', null, []) !!}
+									{!! Form::text('first_name', $account->exists  ? $account->first_name : NULL, []) !!}
 								</label>
 							</div>
 						</div>
@@ -104,19 +104,19 @@
 							<div class="col-md-4">
 								<label>
 									Date of Birth
-									{!! Form::date('date_of_birth', \Illuminate\Support\Carbon::now(), []) !!}
+									{!! Form::date('date_of_birth', $account->exists  ? $account->dob :  \Illuminate\Support\Carbon::now(), []) !!}
 								</label>
 							</div>
 							<div class="col-md-4">
 								<label>
 									Gender
-									{!! Form::text('gender', NULL, []) !!}
+									{!! Form::text('gender', $account->exists  ? $account->gender : NULL, []) !!}
 								</label>
 							</div>
 							<div class="col-md-4">
 								<label>
 									Nationality
-									{!! Form::text('nationality', NULL, []) !!}
+									{!! Form::text('nationality', $account->exists ? $account->nationality : NULL, []) !!}
 								</label>
 							</div>
 						</div>
@@ -124,13 +124,13 @@
 							<div class="col-md-6">
 								<label>
 									Place Of Birth:
-									{!! Form::text('place_of_birth ', null, []) !!}
+									{!! Form::text('place_of_birth ', $account->exists ? $account->place_of_bith : NULL, []) !!}
 								</label>
 							</div>
 							<div class="col-md-6">
 								<label>
 									Country of Birth:
-									{!! Form::text('country_of_birth', null, []) !!}
+									{!! Form::text('country_of_birth', $account->exists ? $account->country_of_birth : NULL, []) !!}
 								</label>
 							</div>
 						</div>
@@ -138,19 +138,19 @@
 							<div class="col-md-4">
 								<label>
 									Marital Status
-									{!! Form::text('marital_status', null, []) !!}
+									{!! Form::text('marital_status', $account->exists ? $account->married_status : NULL, []) !!}
 								</label>
 							</div>
 							<div class="col-md-4">
 								<label>
 									Type of Legal
-									{!! Form::text('type_of_legal', null, []) !!}
+									{!! Form::text('type_of_legal', $account->exists ? $account->type_legal : NULL, []) !!}
 								</label>
 							</div>
 							<div class="col-md-4">
 								<label>
 									Number
-									{!! Form::text('number', null, []) !!}
+									{!! Form::text('number', $account->exists ? $account->id_number : NULL, []) !!}
 								</label>
 							</div>
 						</div>
@@ -158,20 +158,19 @@
 							<div class="col-md-4">
 								<label>
 									Issuing Country
-									{!! Form::text('issuing_country', null, []) !!}
+									{!! Form::text('issuing_country', $account->exists ? $account->issuring_country : NULL, []) !!}
 								</label>
 							</div>
 							<div class="col-md-4">
 								<label>
 									Issue Date
-									{!! Form::date("issuing_date", \Illuminate\Support\Carbon::now(), []) !!}
-									{{-- {!! Form::text('issuing_date', null, []) !!} --}}
+									{!! Form::date("issuing_date", $account->exists ? $account->issued_date : \Illuminate\Support\Carbon::now(), []) !!}
 								</label>
 							</div>
 							<div class="col-md-4">
 								<label>
 									Expire Date
-									{!! Form::date('expire_date', \Illuminate\Support\Carbon::now(), []) !!}
+									{!! Form::date('expire_date', $account->exists ? $account->expiry_date : \Illuminate\Support\Carbon::now(), []) !!}
 								</label>
 							</div>
 						</div>
@@ -201,13 +200,13 @@
 							<div class="col-md-4">
 								<label>
 									Phone Number
-									{!! Form::text('phone_number', null, []) !!}
+									{!! Form::text('phone_number', $account->exists ? $account->phone : NULL, []) !!}
 								</label>
 							</div>
 							<div class="col-md-4">
 								<label>
 									Email Address
-									{!! Form::text('email_address', null, []) !!}
+									{!! Form::email('email_address', $account->exists ? $account->email : NULL, []) !!}
 								</label>
 							</div>
 						</div>
@@ -220,7 +219,7 @@
 							<div class="col-md-6">
 								<label>
 									Institution name:
-									{!! Form::text('institution_name ', null, []) !!}
+									{!! Form::text('institution_name ', $account->exists ? $account->institute_name : NULL, []) !!}
 								</label>
 							</div>
 							<div class="col-md-6">
@@ -234,7 +233,7 @@
 							<div class="col-md-6">
 								<label>
 									Institution Address:
-									{!! Form::text('institution_address ', null, []) !!}
+									{!! Form::text('institution_address ', $account->exists ? $account->insitution_address : NULL, []) !!}
 								</label>
 							</div>
 							<div class="col-md-6">
@@ -317,15 +316,15 @@
 						<div class="row mb-2">
 							<div class="col-md-12">
 								<label>
-									{!! Form::checkbox('is_us_person', null, false, []) !!}
+									{!! Form::checkbox('is_us_person', 'YES', ($account->exists && $account->is_us_person =='yes') ? true : false , []) !!}
 									Yes: USTIN 
-									{!! Form::text('is_us_person_code', null, []) !!}
+									{!! Form::text('is_us_person_code', ($account->exists && $account->is_us_person_code !='') ? $account->is_us_person_code : NULL, []) !!}
 								</label>								
 							</div>
 							<div class="col-md-12">
 								<label>
 									FATCA Exemption Code (if any)
-									{!! Form::text('is_us_person_code_name', null, []) !!}
+									{!! Form::text('is_us_person_code_name', ($account->exists && $account->is_us_person_yes_code !='') ? $account->is_us_person_yes_code : NULL, []) !!}
 								</label>
 								<p>I am a United States (US) citizen, resident, permanent resident, green card holder or US tax payer by reason of having substantial physical. presence in the US or any other reason.</p>
 							</div>
@@ -333,7 +332,7 @@
 						<div class="row mb-2">
 							<div class="col-md-12">
 								<label>
-									{!! Form::checkbox('no_us_persion', null, false, []) !!}
+									{!! Form::checkbox('no_us_persion', "NO",($account->exists && $account->is_us_person =='no') ? true : false , []) !!}
 									No, I/we certify that I am not subject to U.S. backup withholding because: (a) I am/we are exempt from U.S. backup withholding, or (b) I/we have not been notified by the Internal Revenue Service (IRS) that I am/we are subject to U.S. backup withholding as a result of a failure to report all interest or dividends, or (c) the IRS has notified me that I am/we are no longer subject to U.S. backup withholding. I acknowledge and aware that I will notify to the bank within 30 days of any change to my status.
 								</label>
 							</div>
@@ -348,8 +347,7 @@
 			</div>
 		</div>
 	</section>
-	<div class="clearvix mb-5"></div>
-	<section id="desposit_product_service_detial" class="mt-5">
+	<section id="desposit_product_service_detial">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
