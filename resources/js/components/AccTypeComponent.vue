@@ -252,7 +252,8 @@
 				action_url: '',
 				value: '',
 				account_name: '',
-				token_string: ''
+				token_string: '',
+				local: '',
 			}			
 		},
 		methods:{
@@ -260,6 +261,7 @@
 				return this.correntaccount = account;
 			},
 			showModal(){
+				let local = this.locale;
 				let url = window.location;
 				let link_url = url+event.target.getAttribute('data-url');
 				this.token_string = $('meta[name="csrf-token"]').attr('content');

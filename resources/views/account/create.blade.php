@@ -491,31 +491,31 @@
 			switch (n) {
 				case 0:
 					text = "<h1>Let's Get Started</h1>";
-					img = "../../../images/icons/user.svg";
+					img = "../../../../images/icons/user.svg";
 					break;
 				case 1:
 					text = "<h1>Identify Information</h1>";
-					img = "../../../images/icons/id-card.svg";
+					img = "../../../../images/icons/id-card.svg";
 					break;
 				case 2:
 					text = "<h1>Residential Address</h1>";
-					img = "../../../images/icons/home.svg";
+					img = "../../../../images/icons/home.svg";
 					break;
 				case 3:
 					text = "<h1>Employement Detail</h1>";
-					img = "../../../images/icons/briefcase.svg";
+					img = "../../../../images/icons/briefcase.svg";
 					break;
 				case 4:
 					text = "<h1>Purpose of Banking Service</h1>";
-					img = "../../../images/icons/question-circle-solid.svg";
+					img = "../../../../images/icons/question-circle-solid.svg";
 					break;
 				case 4:
 					text = "<h1>Purpose of Banking Service</h1>";
-					img = "../../../images/icons/question-circle-solid.svg";
+					img = "../../../../images/icons/question-circle-solid.svg";
 					break;
 				default:
 					text = "<h1>Account Information</h1>";
-					img = "../../../images/icons/contract.svg"
+					img = "../../../../images/icons/contract.svg"
 			}
 			document.getElementById('head_title_name0').innerHTML = text;
 			document.getElementById('icon').src=img;
@@ -760,7 +760,7 @@
 			}
 
 			function hotValidateField(value, url, message = '') {
-				axios.post(url+'/'+value)
+				axios.post(url+'/'+document.getElementsByTagName('html')[0].getAttribute('lang')+'/'+value)
 					.then(res=>{
 						let return_data = res.data;
 						if(return_data == false){

@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/{locale?}', function ($locale){
+    Session::put('locale', $locale);
+    $session=Session::get('locale');
+    return redirect()->back();
+})->middleware('Localization')->name('set-local-lang');
 
 Route::prefix('frontend')->group(function(){
 	Route::post('/account/{any}/create','FrontendAccountController@create')->name('frontend-account-create');

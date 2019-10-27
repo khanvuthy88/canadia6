@@ -2092,7 +2092,8 @@ __webpack_require__.r(__webpack_exports__);
       action_url: '',
       value: '',
       account_name: '',
-      token_string: ''
+      token_string: '',
+      local: ''
     };
   },
   methods: {
@@ -2100,6 +2101,7 @@ __webpack_require__.r(__webpack_exports__);
       return this.correntaccount = account;
     },
     showModal: function showModal() {
+      var local = this.locale;
       var url = window.location;
       var link_url = url + event.target.getAttribute('data-url');
       this.token_string = $('meta[name="csrf-token"]').attr('content');
@@ -70588,10 +70590,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/print.scss":
-/*!***********************************!*\
-  !*** ./resources/sass/print.scss ***!
-  \***********************************/
+/***/ "./resources/sass/lang.scss":
+/*!**********************************!*\
+  !*** ./resources/sass/lang.scss ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -70600,14 +70602,14 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!***************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/print.scss ***!
-  \***************************************************************/
+/*!**************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/lang.scss ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! c:\xampp\htdocs\canadia.local\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! c:\xampp\htdocs\canadia.local\resources\sass\print.scss */"./resources/sass/print.scss");
+__webpack_require__(/*! C:\xampp\htdocs\canadia.local\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\canadia.local\resources\sass\lang.scss */"./resources/sass/lang.scss");
 
 
 /***/ })
