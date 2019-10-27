@@ -83,9 +83,9 @@ return [
     'locale' => 'en',
 
     'available_locales' => [
-        'en',
-        'km',
-        'zh'
+        'en'=>'/images/icons/flag/united-states.svg',
+        'km'=>'/images/icons/flag/cambodia.svg',
+        'zh'=>'/images/icons/flag/china.svg'
     ],
 
     /*

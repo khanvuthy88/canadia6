@@ -43,12 +43,12 @@
                     </ul>
                     <menu-component locale="{{ app()->getLocale() }}"></menu-component>
                     <ul class="navbar-nav" id="lang">
-                        @foreach (config('app.available_locales') as $locale)
-                            <li class="nav-item">
+                        @foreach (config('app.available_locales') as $locale => $value)
+                            <li class="nav-item" id="{{ $locale }}">
                                 <a class="nav-link"
                                    href="{{ route('set-local-lang',$locale) }}"
                                     @if (app()->getLocale() == $locale) style="font-weight: bold; text-decoration: underline" @endif>
-                                    {{ strtoupper($locale) }}
+                                    <img src="{{ $value }}">
                                 </a>
                             </li>
                         @endforeach
@@ -107,5 +107,18 @@
 
     <script src="{{ asset('js/app.js') }}"></script>
     @yield('script')
+    <script type="text/javascript">
+        jQuery(document).ready(function($){
+            let lang = document.documentElement.lang;
+            let langes = document.getElementById('lang');
+            let llist = langes.getElementsByTagName('li');
+            for(i=0; i<llist.length; i++){
+                if(llist[i].id == lang){
+                    document.getElementById(llist[i].id).style.display = "none";
+                }
+                console.log(llist[i].id);
+            }
+        });
+    </script>
 </body>
 </html>
