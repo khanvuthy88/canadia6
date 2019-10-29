@@ -22,13 +22,13 @@
 								<div class="text">
 									<label class="pull-right">
 										{{ __('print.application_date') }}
-										{!! Form::date('application_date', \Illuminate\Support\Carbon::now(), []) !!}
+										{!! Form::date('application_date', \Illuminate\Support\Carbon::now(), ['style'=>'border:none;']) !!}
 									</label>
 								</div>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-3">
+							<div class="col-md-3"> 
 								<label>
 									{{ __('print.request') }}
 								</label>
@@ -55,26 +55,25 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 mb-3">
-					<h5 class="title">I. ព័ត៍មានលម្អិតអតិថិជន​ / APPLICATION DETAILS</h5>
+					<h5 class="title">{{  __('print.application_detail') }}</h5>
 				</div>
 				<div class="col-md-4">
 
 					<label>
-						សូមគូស
 						{!! Form::checkbox('tick_the_box', null, false, []) !!}
-						នៅក្នុងប្រអប់
+						{{ __('print.tick_the_box') }}
 					</label>
 				</div>
 				<div class="col-md-4">
 					<label>
 						{!! Form::checkbox('new_customer', null, false, []) !!}
-						អតិថិជនថ្មី
+						{{ __('print.new_customer') }}
 					</label>
 				</div>
 				<div class="col-md-4">
 					<label>
 						{!! Form::checkbox('existing_customer_information', null, false, []) !!}
-						Existing Customer or other information update
+						{{ __('print.existing_customer_information') }}
 					</label>
 				</div>
 			</div>
@@ -83,19 +82,19 @@
 					<div class="block-info">
 						<div class="row">
 							<div class="col-md-12">
-								<h5 class="sub-title">1.ព័ត៏មានបុគ្គល / Personal Detail</h5>
+								<h5 class="sub-title">{{ __('print.personal_detail') }}</h5>
 							</div>
 						</div>
 						<div class="row mt-2">
 							<div class="col-md-6">
 								<label>
-									Family Name​
+									{{ __('print.family_name') }}
 									{!! Form::text('family_name', $account->exists  ? $account->family_name : NULL, []) !!}
 								</label>
 							</div>
 							<div class="col-md-6">
 								<label>
-									Fist Name
+									{{ __('print.first_name') }}
 									{!! Form::text('first_name', $account->exists  ? $account->first_name : NULL, []) !!}
 								</label>
 							</div>
@@ -103,19 +102,19 @@
 						<div class="row mt-2">
 							<div class="col-md-4">
 								<label>
-									Date of Birth
+									{{ __('print.date_of_birth') }}
 									{!! Form::date('date_of_birth', $account->exists  ? $account->dob :  \Illuminate\Support\Carbon::now(), []) !!}
 								</label>
 							</div>
 							<div class="col-md-4">
 								<label>
-									Gender
+									{{ __('print.gender') }}
 									{!! Form::text('gender', $account->exists  ? $account->gender : NULL, []) !!}
 								</label>
 							</div>
 							<div class="col-md-4">
 								<label>
-									Nationality
+									{{ __('print.nationality') }}
 									{!! Form::text('nationality', $account->exists ? $account->nationality : NULL, []) !!}
 								</label>
 							</div>
@@ -123,13 +122,13 @@
 						<div class="row mt-2">
 							<div class="col-md-6">
 								<label>
-									Place Of Birth:
+									{{ __('print.place_of_birth') }}
 									{!! Form::text('place_of_birth ', $account->exists ? $account->place_of_bith : NULL, []) !!}
 								</label>
 							</div>
 							<div class="col-md-6">
 								<label>
-									Country of Birth:
+									{{ __('print.country_of_birth') }}
 									{!! Form::text('country_of_birth', $account->exists ? $account->country_of_birth : NULL, []) !!}
 								</label>
 							</div>
@@ -137,7 +136,7 @@
 						<div class="row mt-2">
 							<div class="col-md-4">
 								<label>
-									Marital Status
+									{{ __('print.marital_status') }}
 									{!! Form::text('marital_status', $account->exists ? $account->married_status : NULL, []) !!}
 								</label>
 							</div>
@@ -149,7 +148,7 @@
 							</div>
 							<div class="col-md-4">
 								<label>
-									Number
+									{{ __('print.number') }}
 									{!! Form::text('number', $account->exists ? $account->id_number : NULL, []) !!}
 								</label>
 							</div>
@@ -157,35 +156,35 @@
 						<div class="row mt-2">
 							<div class="col-md-4">
 								<label>
-									Issuing Country
+									{{ __('print.issuing_country') }}
 									{!! Form::text('issuing_country', $account->exists ? $account->issuring_country : NULL, []) !!}
 								</label>
 							</div>
 							<div class="col-md-4">
 								<label>
-									Issue Date
+									{{ __('print.issuing_date') }}
 									{!! Form::date("issuing_date", $account->exists ? $account->issued_date : \Illuminate\Support\Carbon::now(), []) !!}
 								</label>
 							</div>
 							<div class="col-md-4">
 								<label>
-									Expire Date
+									{{ __('print.expire_date') }}
 									{!! Form::date('expire_date', $account->exists ? $account->expiry_date : \Illuminate\Support\Carbon::now(), []) !!}
 								</label>
 							</div>
 						</div>
 						<div class="row mt-2">
 							<div class="col-md-12">
-								<label>
-									Current Address
-									{!! Form::text('current_address', null, []) !!}
+								<label style="width: 100%">
+									{{ __('print.current_address') }}
+									{!! Form::text('current_address', $account->exists ? $account->current_address : NULL, ['style'=>'width:70%;']) !!}
 								</label>
 							</div>
 						</div>
 						<div class="row mt-2">
 							<div class="col-md-12">
 								<label>
-									Permanent Address
+									{{ __('print.permanent_address') }}
 									{!! Form::text('permanent_address', null, []) !!}
 								</label>
 							</div>
@@ -193,147 +192,147 @@
 						<div class="row mt-2">
 							<div class="col-md-4">
 								<label>
-									Country Code
+									{{ __('print.country_code') }}
 									{!! Form::text('country_code', null, []) !!}
 								</label>
 							</div>
 							<div class="col-md-4">
 								<label>
-									Phone Number
+									{{ __('print.phone_number') }}
 									{!! Form::text('phone_number', $account->exists ? $account->phone : NULL, []) !!}
 								</label>
 							</div>
 							<div class="col-md-4">
 								<label>
-									Email Address
+									{{ __('print.email_address') }}
 									{!! Form::email('email_address', $account->exists ? $account->email : NULL, []) !!}
 								</label>
 							</div>
 						</div>
 						<div class="row mt-3 mb-3">
 							<div class="col-md-12">
-								<h5 class="sub-title">2.ព័ត៏មានលម្អិតអំពីមុខរបរ : / Employment Detail</h5>
+								<h5 class="sub-title">{{ __('print.employment_detail') }}</h5>
 							</div>
 						</div>
 						<div class="row mt-2">
 							<div class="col-md-6">
 								<label>
-									Institution name:
+									{{  __('print.institution_name') }}
 									{!! Form::text('institution_name ', $account->exists ? $account->institute_name : NULL, []) !!}
 								</label>
 							</div>
 							<div class="col-md-6">
-								<label>
-									Occupation
-									{!! Form::text('occupation', null, []) !!}
+								<label style="width: 100%;">
+									{{  __('print.occupation') }}
+									{!! Form::text('occupation', $account->exists ? $account->sub_employement: NULL, ['style'=>'width:70%']) !!}
 								</label>
 							</div>
 						</div>
 						<div class="row mt-2">
 							<div class="col-md-6">
 								<label>
-									Institution Address:
+									{{  __('print.institution_address') }}
 									{!! Form::text('institution_address ', $account->exists ? $account->insitution_address : NULL, []) !!}
 								</label>
 							</div>
 							<div class="col-md-6">
-								<label>
-									Type of Business
-									{!! Form::text('type_of_business', null, []) !!}
+								<label style="width: 100%;">
+									{{ __('print.type_of_business') }}
+									{!! Form::text('type_of_business', $account->exists ? $account->employment : NULL, ['style'=>'width:70%;']) !!}
 								</label>
 							</div>
 						</div>
 						<div class="row mt-3 mb-3">
 							<div class="col-md-12">
-								<h5 class="sub-title">3.ប្រភពប្រាក់ចំណូល និនធនាគារ / Income and Banking</h5>
+								<h5 class="sub-title">{{  __('print.income_and_banking') }}</h5>
 							</div>
 							<div class="col-md-12">
-								<p>ប្រភពប្រាក់ចំណូលចម្បង / Primary Soucre of Income</p>
+								<p>{{  __('print.primary_soucre_of_income') }}</p>
 							</div>
 						</div>
 						<div class="row mt-2">
 							<div class="col-md-3">
 								<label>									
 									{!! Form::checkbox('personal_own_property', null, false, []) !!}
-									Personal Own Property
+									{{ __('print.personal_own_property') }}
 								</label>
 							</div>
 							<div class="col-md-3">
 								<label>								
 									{!! Form::checkbox('salary', null, false, []) !!}
-									Salary
+									{{  __('print.salary') }}
 								</label>
 							</div>
 							<div class="col-md-3">
 								<label>									
 									{!! Form::checkbox('business_revenue', null, false, []) !!}
-									Business Revnue
+									{{  __('print.business_revenue') }}
 								</label>
 							</div>
 							<div class="col-md-3">
 								<label>									 
 									{!! Form::checkbox('source_income_other', null, false, []) !!}
-									Other
+									{{  __('print.source_income_other') }}
 								</label>
 							</div>
 						</div>
 						<div class="row mt-2">
 							<div class="col-md-12">
-								<p>គោលបំណងនៃកាប្រើរសេវាកម្មធនាគារ / Purpose of Banking Service</p>
+								<p>{{ __('print.purpose_of_banking_service') }}</p>
 							</div>
 						</div>
 						<div class="row mt-2">
 							<div class="col-md-3">
 								<label>									
 									{!! Form::checkbox('saving', null, false, []) !!}
-									Saving
+									{{ __('print.saving') }}
 								</label>
 							</div>
 							<div class="col-md-3">
 								<label>								
 									{!! Form::checkbox('day_to_day_business', null, false, []) !!}
-									Day to day Business
+									{{ __('print.day_to_day_business') }}
 								</label>
 							</div>
 							<div class="col-md-3">
 								<label>									
 									{!! Form::checkbox('payroll', null, false, []) !!}
-									Payroll
+									{{ __('print.payroll') }}
 								</label>
 							</div>
 							<div class="col-md-3">
 								<label>									 
 									{!! Form::checkbox('banking_service_other', null, false, []) !!}
-									Other
+									{{ __('print.banking_service_other') }}
 								</label>
 							</div>
 						</div>
 						<div class="row mt-3 mb-3">
 							<div class="col-md-12">
-								<h5 class="sub-title">4.សេចក្តីប្រកាសសម្រាប់អនុវត្ត / FATCA / FATCA Certification</h5>
+								<h5 class="sub-title">{{ __('print.fatca_certification') }}</h5>
 							</div>
 						</div>
 						<div class="row mb-2">
 							<div class="col-md-12">
 								<label>
 									{!! Form::checkbox('is_us_person', 'YES', ($account->exists && $account->is_us_person =='yes') ? true : false , []) !!}
-									Yes: USTIN 
+									{{ __('print.yes_ustin') }}
 									{!! Form::text('is_us_person_code', ($account->exists && $account->is_us_person_code !='') ? $account->is_us_person_code : NULL, []) !!}
 								</label>								
 							</div>
 							<div class="col-md-12">
 								<label>
-									FATCA Exemption Code (if any)
+									{{ __('print.fatca_exemption_code') }}
 									{!! Form::text('is_us_person_code_name', ($account->exists && $account->is_us_person_yes_code !='') ? $account->is_us_person_yes_code : NULL, []) !!}
 								</label>
-								<p>I am a United States (US) citizen, resident, permanent resident, green card holder or US tax payer by reason of having substantial physical. presence in the US or any other reason.</p>
+								<p>{{ __('print.fatca_yes_description') }}</p>
 							</div>
 						</div>
 						<div class="row mb-2">
 							<div class="col-md-12">
 								<label>
 									{!! Form::checkbox('no_us_persion', "NO",($account->exists && $account->is_us_person =='no') ? true : false , []) !!}
-									No, I/we certify that I am not subject to U.S. backup withholding because: (a) I am/we are exempt from U.S. backup withholding, or (b) I/we have not been notified by the Internal Revenue Service (IRS) that I am/we are subject to U.S. backup withholding as a result of a failure to report all interest or dividends, or (c) the IRS has notified me that I am/we are no longer subject to U.S. backup withholding. I acknowledge and aware that I will notify to the bank within 30 days of any change to my status.
+									{{ __('print.fatca_no_description') }}
 								</label>
 							</div>
 						</div>
@@ -351,7 +350,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h5 class="title">II. ព័ត៍មានលម្អិតផលិតផង និងសេវាកម្ម​ / Deposit Product && Service Detail</h5>
+					<h5 class="title">{{ __('print.deposit_product_service_detail') }}</h5>
 				</div>
 			</div>
 			<div class="row">
@@ -359,25 +358,25 @@
 					<div class="block-info mb-1">
 						<div class="row">
 							<div class="col-md-12">
-								<h5 class="sub-title">1.ព័ត៏មានភ្ជាប់គណនី / Link Account</h5>
+								<h5 class="sub-title">{{ __('print.link_account') }}</h5>
 							</div>
 						</div>
 						<div class="row mt-2">
 							<div class="col-md-12">
 								<label>
-									Please link between my Current Account No
+									{{ __('print.current_account_number') }}
 									{!! Form::text('current_account_number', null, []) !!}
 								</label>
 							</div>
 							<div class="col-md-12">
 								<label>
-									With Saving Account No 
+									{{ __('print.saving_account_number') }}
 									{!! Form::text('saving_account_number', null, []) !!}
 								</label>
 							</div>
 							<div class="col-md-12">
 								<label>
-									All applicatable fee charge debit from Account No
+									{{ __('print.debit_account_number') }}
 									{!! Form::text('debit_account_number', null, []) !!}
 								</label>
 							</div>
@@ -386,7 +385,152 @@
 					<div class="block-info mb-1">
 						<div class="row">
 							<div class="col-md-12">
-								<h5 class="sub-title">3.សេវាកម្មធនាគាតាមប្រព័ន្ធអ៊ីនធឺណិត / Individaul Internet Banking</h5>
+								<h5 class="sub-title">2.កាស្នើរសុំកាត / Card Request</h5>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-5">
+								<label>
+									{!! Form::checkbox('2', '2', false, []) !!}
+									Debit Card​ ( សូមបំពេញព័ត៏មានខាងក្រោម/
+Please complete below infomation)
+								</label>
+							</div>
+							<div class="col-md-7">
+								<label>
+									{!! Form::checkbox('2', '2', false, []) !!}
+									កាតឥណទាន / Credit Card (* សូមបំពេញពាក្យស្នើសុំប័ណ្ណឥណទាននៃធនាគាកាណាឌីយ៉ា/Please complete Canadia Bank Application Form )
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<p>2.1 ប្រភេទអតិថិជន / Customer type</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<label>
+									{!! Form::checkbox('3', '3', false, []) !!}
+									Customer
+								</label>
+							</div>
+							<div class="col-md-3">
+								<label>
+									{!! Form::checkbox('3', '3', false, []) !!}
+									Staff
+								</label>
+							</div>
+							<div class="col-md-3">
+								<label>
+									{!! Form::checkbox('3', '3', false, []) !!}
+									Payroll Service
+								</label>
+							</div>
+							<div class="col-md-3">
+								<label>
+									{!! Form::checkbox('3', '3', false, []) !!}
+									Other 
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<p>2.2 ប្រភេទកាត / Card Type</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<label>
+									{!! Form::checkbox('2', '3', false, []) !!}
+									 ATM Card
+								</label>
+							</div>
+							<div class="col-md-3">
+								<label>
+									{!! Form::checkbox('2', '3', false, []) !!}
+									 VISA
+								</label>
+							</div>
+							<div class="col-md-3">
+								<label>
+									{!! Form::checkbox('2', '3', false, []) !!}
+									 UPI
+								</label>
+							</div>
+							<div class="col-md-3">
+								<label>
+									{!! Form::checkbox('2', '3', false, []) !!}
+									Elite Card
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<p>ប្រភេទផលិតផល / Product type</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<label>
+									{!! Form::checkbox('2', '3', false, []) !!}
+									Normal
+								</label>
+							</div>
+							<div class="col-md-3">
+								<label>
+									{!! Form::checkbox('2', '3', false, []) !!}
+									Premium
+								</label>
+							</div>
+							<div class="col-md-3">
+								<label>
+									{!! Form::checkbox('2', '3', false, []) !!}
+									VIP
+								</label>
+							</div>							
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<label>									
+									Account No
+									{!! Form::text('2', null, []) !!}
+								</label>
+							</div>
+							<div class="col-md-6">
+								<label>
+									Secret Phrase
+									{!! Form::text('2', null, []) !!}									
+								</label>
+							</div>														
+						</div>
+						<div class="row">
+							<div class="col-md-8">
+								<label style="width: 100%">							
+									Emboss Name
+									{!! Form::text('2', null, ['style'=>'width:80%']) !!}
+								</label>
+							</div>
+							<div class="col-md-4">
+								<label>
+									Pickup Branch 
+									{!! Form::text('2', null, []) !!}									
+								</label>
+							</div>														
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<label style="width: 100%">
+									Account Linkage
+									{!! Form::text('2', null, ['style'=>'width:80%']) !!}	
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="block-info mb-1">
+						<div class="row">
+							<div class="col-md-12">
+								<h5 class="sub-title">{{ __('print.individaul_internet_banking') }}</h5>
 							</div>
 							<div class="col-md-3">
 								<label>

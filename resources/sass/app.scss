@@ -28,58 +28,20 @@ $canadia-secondary: #00bcd4;
 	}
  }
 
+h2{
+	font-size: 1.6rem;
+}
 
-// .canadia-radio{
-// 	position: absolute;
-// 	top: 0;
-// 	left: 0;
-// 	height: 20px;
-// 	width: 20px;
-// 	background-color: #eee;
-// 	border-radius: 50%;
-// 	&:after{
-// 		content: "";
-// 		position: absolute;
-// 		display: none;
-// 	}
-// }
-// #radio-button{
-// 	label{
-// 		display: block;
-// 		position: relative;
-// 		padding-left: 35px;
-// 		margin-bottom: 12px;
-// 		cursor: pointer;
-// 		// font-size: 22px;
-// 		-webkit-user-select: none;
-// 		-moz-user-select: none;
-// 		-ms-user-select: none;
-// 		user-select: none;
-// 	}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
 
-// 	input[type="radio"]{
-// 		position: absolute;
-// 		opacity: 0;
-// 		cursor: pointer;
-// 	}
-// 	input ~ .canadia-radio{
-// 		background-color: #fff;
-// 		border: 1px solid $canadia-primary;
-// 	}
-// 	input:checked ~ .canadia-radio{		
-// 		&:after{
-// 			display: block;
-// 			background-color: $canadia-primary;
-// 		}
-// 	}
-// 	.canadia-radio{
-// 		&:after{
-// 			top: 4px;
-// 		    left: 4px;
-// 		    width: 10px;
-// 		    height: 10px;
-// 		    border-radius: 50%;
-// 		    background: white;
-// 		}
-// 	}
-// }
+.sticky + .content {
+  padding-top: 102px;
+}
+.header{
+	z-index: 999;
+}

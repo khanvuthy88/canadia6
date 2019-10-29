@@ -24,6 +24,7 @@
 					<h1 class="text-center text-danger font-weight-bold">{{ $account_code }}</h1>
 					<p class="text-center">
 						Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euiquam erat volutpat
+						{{ $primary_banking_request }}
 					</p>
 				</div>
 			</div>

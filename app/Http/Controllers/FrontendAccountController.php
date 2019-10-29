@@ -71,7 +71,7 @@ class FrontendAccountController extends Controller
         $purpose_debit_card = 0;
         $purpose_credit_card = 0;
         // Check if primary_banking_request present in $request array and not empty
-        if($request->filled('primary_banking_request')):
+        if($request['primary_banking_request']):
             // Check those key in array request using Arr helper
             if(Arr::has($request['primary_banking_request'], 'mobile-banking')):
                 $purpose_mobile_banking = 1;
@@ -93,7 +93,7 @@ class FrontendAccountController extends Controller
         $account->place_of_bith = $request['place_of_birth'];
         $account->nationality = $request['nationality'];
         $account->country_of_birth = $request['country_of_birth'];
-        $account->type_legal =  $request['type_legal'];
+        $account->type_legal =  $type_legal;
         $account->issuring_country = $request['issuring_country'];
         $account->id_number = $request['id_number'];
         $account->issued_date = $request['issued_date'];
@@ -104,7 +104,7 @@ class FrontendAccountController extends Controller
         $account->province_code = $request['province_id'];
         $account->district_code = $request['district_id'];
         $account->commune_code = $request['commune_id'];
-        $account->village_code = $request['village_id'];
+        $account->village_code = $request['village_id'];        
         $account->email = $request['email'];
         $account->phone = $request['phone'];
         $account->employement_detail = $request['employement-detail'];
@@ -134,18 +134,19 @@ class FrontendAccountController extends Controller
         $file_name = $account->phone;
         $file_content.=$account->first_name.'|'.$account->family_name.'|'.$account->dob.'|'.$account->gender.'|'.$account->married_status.'|'.$account->place_of_birth.'|'.$account->nationality.'|'.$account->country_of_birth.'|'.$account->type_legal.'|'.$account->issuring_country.'|'.$account->id_number.'|'.$account->issued_date.'|'.$account->expiry_date.'|'.$account->house_number.'|'.$account->street.'|'.$account->province_code.'|'.$account->district_code.'|'.$account->commune_code.'|'.$account->village_code.'|'.$account->email.'|'.$account->phone.'|'.$account->employement_detail.'|'.$account->sub_employement_detail.'|'.$account->institute_name.'|'.$account->insitution_address.'|'.$account->source_of_income.'|'.$account->monthly_income.'|'.$account->why_open_account.'|'.$account->orther.'|'.$account->is_us_person.'|'.$account->is_us_person_code.'|'.$account->is_us_person_yes_code.'|'.$account->acc_currency.'|'.$account->acc_type;
         
+        $primary_banking_request = $request['primary_banking_request'];
 
         Storage::disk('public')->put($file_name.'.txt', $file_content);
-        return redirect()->route('frontend-account-created-success',compact('account'));
+        return redirect()->route('frontend-account-created-success',compact('account','primary_banking_request'));
 
     }
 
-    public function accountCreatedSuccess(Account $account)
+    public function accountCreatedSuccess(Account $account, $primary_banking_request ='')
     {
         // $account_code = $account->acc_pin_number;
         $account_code = $account->phone;
 
-        return view('account.success',compact('account_code'));
+        return view('account.success',compact('account_code','primary_banking_request'));
     }
 
 
@@ -216,6 +217,15 @@ class FrontendAccountController extends Controller
             $value = $request['phone_number'];
             $account = Account::where('phone',$value)->first();
             if ($account) {
+                $village = TblVillage::where('vid','=', $account->village_code)->first();
+                $commune = TblCommune::where('cid','=', $account->commune_code)->first();
+                $district = TblDistrict::where('did','=', $account->district_code)->first();
+                $province = TblProvince::where('pid','=', $account->province_code)->first();
+                $employment = EmploymentStatus::where('id', $account->employement_detail)->first();
+                $sub_employement = EmploymentStatus::where('id', $account->sub_employement_detail)->first();
+                $account['employment'] = $employment->name;
+                $account['sub_employement'] = $sub_employement->name;
+                $account['current_address'] = $village->title.', '.$commune->title.', '.$district->title.', '.$province->title;
                 return view('account.print-account',compact('account'));
             }
             $account = new Account();

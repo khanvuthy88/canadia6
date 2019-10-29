@@ -46,6 +46,7 @@
 		/* Mark input boxes that gets an error on validation: */
 		input.invalid {
 		  background-color: #ffdddd;
+		  border: 1px solid red;
 		}
 		
 	</style>
@@ -146,7 +147,7 @@
 							<div class="form-row">
 								<div class="col-md-6 form-group">
 									{!! Form::label('ID Number', NULL, []) !!}
-									{!! Form::text('id_number', NULL, ['class'=>'form-control']) !!}
+									{!! Form::text('id_number', NULL, ['class'=>'form-control','id'=>'id_number']) !!}
 								</div>
 								<div class="form-group col-md-6">
 									{!! Form::label('issued_date', NULL, []) !!}
@@ -462,6 +463,8 @@
 			
 		{!! Form::close() !!}
 	</section>
+
+
 @endsection
 
 @section('script')
@@ -470,6 +473,7 @@
 	<script src="{{ asset('vendors/ion-rangeslider/js/ion.rangeSlider.min.js') }}"></script>
 	<script src="{{ asset('vendors/icheck/icheck.min.js') }}"></script>
 	<script type="text/javascript">
+
 		document.title = "Open Account";
 		var currentTab = 0; // Current tab is set to be the first tab (0)
 		showTab(currentTab); // Display the current tab
@@ -577,6 +581,7 @@
 
 		$(document).ready(function(){
 			var now = new Date();
+			var date = new Date();
 			var now_date = moment();
 			let max_date = now.getFullYear-18;
 			let custom_values = [100, 300, 800, 2000, 30000, 5000];
@@ -584,11 +589,25 @@
 		    var my_from = custom_values.indexOf(100);
 		    var my_to = custom_values.indexOf(800);
 
+		    let issued_date_10 = moment().subtract(10, 'y');
+		    $('#issued_date').val(moment(issued_date_10).format("Y-MM-DD"));
+		    $('#expiry_date').val("");
+
 		    $('#other_sub_type, #purpose_of_banking_service_other_input, #is_us_person_yes, #is_us_person_yes_code').css('display','none');
 
 			$("#datepicker").focusout(function(){
 		         $('#datepicker').val('');
 		    });
+		    $('#issued_date').change(function(){
+		    	let add_10_year = moment($(this).val()).add(10,'y');
+		    	$('#expiry_date').val(moment(add_10_year).format("Y-MM-DD"));
+		    });
+
+		    $('#expiry_date').change(function(){
+		    	let expire_date = $(this).val();
+		    	let issued_date = $(this).val();
+		    });
+
 		    $("#monthly_salary").ionRangeSlider({
 		        skin: "flat",
 		        type: "double",
@@ -605,7 +624,7 @@
 			    checkboxClass: 'icheckbox_flat-red',
 			    radioClass: 'iradio_flat-red'
 			});
-			console.log(moment().diff(now,'years'));
+			// console.log(moment().diff(now,'years'));
 			$("#datepicker").datepicker({ 
 			        autoclose: true, 
 			        todayHighlight: true,
@@ -760,7 +779,7 @@
 			}
 
 			function hotValidateField(value, url, message = '') {
-				axios.post(url+'/'+document.getElementsByTagName('html')[0].getAttribute('lang')+'/'+value)
+				axios.post(url+'/'+value)
 					.then(res=>{
 						let return_data = res.data;
 						if(return_data == false){
@@ -768,11 +787,14 @@
 								  title: 'Error!',
 								  text: message,
 								  type: 'error',
-								  confirmButtonText: 'Cool'
+								  confirmButtonText: 'OK'
 								});
+
 						}
 					});
 			}
+
+
 		});
 	</script>
 @endsection

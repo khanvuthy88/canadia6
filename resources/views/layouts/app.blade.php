@@ -24,7 +24,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav id="header" class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="{{ url('/images/logo_cnb.png') }}">
@@ -38,7 +38,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">                       
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="modal" data-target="#looking_for_account_or_manual">Test</a>
+                            <a style="cursor: pointer;" class="nav-link" data-toggle="modal" data-target="#looking_for_account_or_manual">Test</a>
                         </li>
                     </ul>
                     <menu-component locale="{{ app()->getLocale() }}"></menu-component>
@@ -115,10 +115,23 @@
             for(i=0; i<llist.length; i++){
                 if(llist[i].id == lang){
                     document.getElementById(llist[i].id).style.display = "none";
-                }
-                console.log(llist[i].id);
+                }               
             }
         });
+    </script>
+    <script>
+        window.onscroll = function() {myFunction()};
+
+        var header = document.getElementById("header");
+        var sticky = header.offsetTop;
+
+        function myFunction() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+        }
     </script>
 </body>
 </html>
