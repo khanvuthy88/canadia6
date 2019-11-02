@@ -1,0 +1,193 @@
+$canadia-primary: #ef5350;
+$canadia-secondary: #00bcd4;
+.intro{
+	width: 100%;
+	background: url(/../images/cnb-openaccount-home.jpg);
+	background-position: 0% 90%;
+    min-height: 560px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media screen and (max-width: 35.7em){
+    	background-position: 17% 90%;
+    }
+    .wrapper{
+    	padding: 15% 0px;
+		text-align: center;
+		.btn{
+			border-radius: 0px !important;
+			a{
+				color: #fff;
+				text-transform: uppercase;
+				&:hover{
+					text-decoration: none;    					
+				}
+			}
+			&:hover{
+				background-color: $canadia-secondary;
+			}
+		}
+    }	    
+}
+
+.account-types{
+		display: flex;
+		@media screen and (max-width: 35.7em){
+	    	display: block;
+	    }
+		.type{
+			min-height: 600px;
+		    position: relative;
+		    width: 100%;
+		    @media screen and (max-width: 37.5em){
+				min-height: auto;
+			}
+		    .background-image-1,
+		    .background-image-2{
+		    	background-size: cover;
+			    background-repeat: no-repeat;
+			    height: 60%;
+				background-position: 50%;
+				@media screen and (max-width: 37.5em){
+					min-height: 250px;
+				}
+		    }
+		    .background-image-1{
+	    		background-image: url(/../images/dailyneedssmall.jpg);
+	    	}
+	    	.background-image-2{
+	    		background-image: url(/../images/growyourmoneysmall_01.jpg);			    
+	    	}
+	    	.type-1{
+	    		background-color: $canadia-primary;
+	    	}
+	    	.type-2{
+	    		background-color: $canadia-secondary;
+	    	}
+	    	.content{
+	    		height: 40%;
+			    color: #ffffff;
+			    text-align: center;
+			    padding: 5% 0px;
+			    @media screen and (max-width: 37.5em){
+			    	height: auto;
+			    }
+			    .wrapper{
+			    	width: 61%;
+				    margin: 0px auto 0px;
+				    padding-bottom: 30px;
+			    }
+			    .btn{
+			    	background-color: inherit;
+			    	border-radius: 0px !important;
+			    	width: 220px;
+			    	height: 47px;
+			    	&:hover{
+			    		background-color: #fff !important;
+			    		color: $canadia-primary !important;
+			    	}
+			    	a{
+			    		text-decoration: none;
+			    		&:hover{
+			    			color: $canadia-primary !important;
+			    		}
+			    	}
+			    }
+			    .btn-canadia{
+		    	    text-transform: uppercase;
+				    padding: 5px 15px;
+				    border: 2px solid #ffffff !important;
+				    background-color: inherit !important;
+			    }
+	    	}
+		}
+	}
+	.modal-enter {
+	  opacity: 0;
+	}
+
+	.modal-leave-active {
+	  opacity: 0;
+	}
+
+	.account-daily-needs,
+	.account-fixed-deposit{
+		background-size: cover;
+    	background-repeat: no-repeat;
+    	width: 100%;
+    	padding: 30px 0px;
+    	.card{
+    		img{
+    			max-width: 70px;
+			    text-align: center;
+			    margin: 30px auto 10px;
+    		}
+    		.card-body{
+    			text-align: center;
+    			min-height: 246px;
+    			button{
+    				width: 91%;
+				    bottom: 15px;
+				    position: absolute;
+				    right: 15px;
+				    left: 15px;
+				    &.btn{
+				    	border-radius: 0px !important;
+				    	text-transform: uppercase;
+				    }
+    			}
+    		}
+    	}
+	}
+	.account-daily-needs{
+		background-image: url(/../images/dailyneedssmall.jpg);
+	}
+	.account-fixed-deposit{
+		background-image: url(/../images/growyourmoneysmall_01.jpg);
+	}
+
+#account-types{
+	justify-content: space-between;
+	li{
+		width: 50%;
+		text-align: center;
+		height: 50px!important;
+		.nav-link{
+			border-radius: 0px;	
+			border:0px !important;
+		}
+		&:first-child{
+			background-color:$canadia-primary;
+		}
+		&:last-child{
+			background-color: $canadia-secondary;
+		}
+		a{
+			&:hover{
+				border:0px;
+			}
+			&.active{
+				border:0px;
+				color:#ffffff;
+			}
+		}
+		&:first-child{
+			a{
+				background-color:$canadia-primary;
+			}
+		}
+		&:last-child{
+			a{
+				background-color:$canadia-secondary;
+			}
+		}
+
+
+		// &.nav-link{
+		// 	.active{
+		// 		background-color:$canadia-primary;
+		// 	}
+		// &:last-child{
+		// 	background-color:$canadia-secondary;
+		// }
+	}
+}

@@ -20,6 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/custom-admin.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/lang.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/front.css') }}">
     @yield('custom-style')
 </head>
 <body>
@@ -117,9 +118,22 @@
                     document.getElementById(llist[i].id).style.display = "none";
                 }               
             }
+            $('#button_account_grouw, #button_dialy_need_account').on('click', function (e) {
+              e.preventDefault()
+              let tab = $(this).data('link');
+              $("#"+tab).tab('show');
+              console.log(tab);
+              to_elementby_id(tab);
+            });
         });
     </script>
-    <script>
+    <script type="text/javascript">
+        function to_elementby_id(argument) {
+            var elmnt = document.getElementById(argument);
+                elmnt.scrollIntoView({behavior: 'smooth'});
+        }        
+    </script>
+    {{-- <script>
         window.onscroll = function() {myFunction()};
 
         var header = document.getElementById("header");
@@ -132,6 +146,6 @@
             header.classList.remove("sticky");
         }
         }
-    </script>
+    </script> --}}
 </body>
 </html>
