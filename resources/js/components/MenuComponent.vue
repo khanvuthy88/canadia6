@@ -117,21 +117,19 @@ ul{
 <template>
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" v-on:click.stop="showModal = true">About Canadia bank</a>
+      <a class="nav-link" v-on:click.stop="showModal = true">{{ about_canadia_menu }}</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" v-on:click.stop="getHelp = true">Get Help</a>
+      <a class="nav-link" v-on:click.stop="getHelp = true">{{ get_help_canadia_menu }}</a>
     </li>
   <transition name="modal" v-if="showModal">
     <div class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container modal-about">
 
-          <div class="modal-header shadow-sm">
-            <slot name="header">
-              <h3>About Canadia Bank</h3>
-              <span class="close-button-img" @click="showModal = false"></span>
-            </slot>
+          <div class="modal-header shadow-sm">            
+            <h3>{{ title }}</h3>
+            <span class="close-button-img" @click="showModal = false"></span>            
           </div>
 
           <div class="modal-body clearfix">
@@ -140,12 +138,8 @@ ul{
                 <img src="/../images/cnb.jpg">
               </div>
               <div class="content clearfix">
-                <h5>Canadia Bank Plc. was established on 11th November 1991 as "Canadia Gold & Trust Corporation Ltd.", joint-venture between Cambodian - Canadians and the National Bank of Cambodia (Central Bank of Cambodia).</h5>
-                <p>The bank's management consisted of former staff of the National Bank of Cambodia and its Cambodian – Canadian shareholders. The main activities were based on gold transactions, gold plaque manufacturing and lending to local merchants. On 19th April 1993 the name was changed into CANADIA BANK LTD., licensed as a Commercial Bank with the National Bank of Cambodia and registered with the Ministry of Commerce. On 16th December 2003 the name of the bank changed into CANADIA BANK PLC. (Public Limited Company).</p>
-                <p>Since privatization in 1998 the Bank has become the largest local bank in Cambodia. With a worldwide network of correspondent banking relationships and a solid base of local and international customers CANADIA BANK PLC holds commanding market shares in loans as well as deposits.</p>
-                <p>The bank offers a wide range of financial services through its Head Office and its 57 branches in Phnom Penh and major cities throughout the country.</p>
-                <p>The bank offers a wide range of financial services through its Head Office and its 57 branches in Phnom Penh and major cities throughout the country.</p>
-                <p>The bank offers a wide range of financial services through its Head Office and its 57 branches in Phnom Penh and major cities throughout the country.</p>
+                <h5>{{ head_title }}</h5>
+                <div v-html="about_content"/>
               </div>
             </slot>
           </div>
@@ -158,10 +152,9 @@ ul{
     <div class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container modal-get-help">
-
           <div class="modal-header shadow-sm">
             <slot name="header">
-              <h3>Get Help</h3>
+              <h3>{{ get_help_title }}</h3>
               <span class="close-button-img" @click="getHelp = false"></span>
             </slot>
           </div>
@@ -170,13 +163,13 @@ ul{
             <slot name="body">
               <div class="call col-md-6 text-center mt-5 mb-5">
                 <img src="/../images/icons/phone.svg" class="mb-3">
-                <h4>Call Center</h4>
+                <h4>{{ get_help_cal_center }}</h4>
                 <h5>+855 23 868 222</h5>
               </div>
               <div class="chart col-md-6 text-center mt-5 mb-5">
                 <img src="/../images/icons/chat.svg" class="mb-3">
-                <h4>24/7 Chat</h4>
-                <h5>We have a dedicated Chat team to help you anytime</h5>
+                <h4>24/7 {{ get_help_chart_text }}</h4>
+                <h5 v-html="get_help_chat_content"/>
               </div>
             </slot>
           </div>
@@ -189,10 +182,22 @@ ul{
 
 <script>
   export default{
+    props: [
+      'title',
+      'head_title',
+      'about_content',
+      'get_help_title',
+      'get_help_chat_content',
+      'get_help_chat',
+      'get_help_cal_center',
+      'get_help_chart_text',
+      'about_canadia_menu',
+      'get_help_canadia_menu'
+    ],
     data:()=>{
       return{
         showModal: false,
-        getHelp:false
+        getHelp:false,
       }
     }
   }

@@ -1,6 +1,20 @@
 <?php 
 	
 	return [
+		'test_menu'=>'Test',
+		'your_phone_number_check'=>'Your phone number ?',
+		'test_menu_note_'=>"Note : Keep it blank for field the form",
+		'about_canadia_menu'=>'About Canadia bank',
+		'get_help_canadia_menu'=>'Get Help',
+		'about_canadia_content'=>"<p>The bank's management consisted of former staff of the National Bank of Cambodia and its Cambodian – Canadian shareholders. The main activities were based on gold transactions, gold plaque manufacturing and lending to local merchants. On 19th April 1993 the name was changed into CANADIA BANK LTD., licensed as a Commercial Bank with the National Bank of Cambodia and registered with the Ministry of Commerce. On 16th December 2003 the name of the bank changed into CANADIA BANK PLC. (Public Limited Company).</p>
+                <p>Since privatization in 1998 the Bank has become the largest local bank in Cambodia. With a worldwide network of correspondent banking relationships and a solid base of local and international customers CANADIA BANK PLC holds commanding market shares in loans as well as deposits.</p>
+                <p>The bank offers a wide range of financial services through its Head Office and its 57 branches in Phnom Penh and major cities throughout the country.</p>
+                <p>The bank offers a wide range of financial services through its Head Office and its 57 branches in Phnom Penh and major cities throughout the country.</p>
+                <p>The bank offers a wide range of financial services through its Head Office and its 57 branches in Phnom Penh and major cities throughout the country.</p>", 
+        'get_help_title'=>'Get Help',
+        'get_help_cal_center'=>'Call Center',
+        'get_help_chat_content'=>'We have a dedicated Chat team to help you anytime',
+        'get_help_chart_text'=>'Chat',
 		'application_date' => 'Application Date:',
 		'request' => 'Applying For:',
 		'single_personal_account' => 'Single Personal Account',

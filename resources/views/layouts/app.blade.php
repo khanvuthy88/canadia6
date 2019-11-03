@@ -39,10 +39,20 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">                       
                         <li class="nav-item">
-                            <a style="cursor: pointer;" class="nav-link" data-toggle="modal" data-target="#looking_for_account_or_manual">Test</a>
+                            <a style="cursor: pointer;" class="nav-link" data-toggle="modal" data-target="#looking_for_account_or_manual">{{ __('print.test_menu') }}</a>
                         </li>
                     </ul>
-                    <menu-component locale="{{ app()->getLocale() }}"></menu-component>
+                    <menu-component 
+                        title="{{ __('print.joint_member_account') }}"
+                        about_content="{!! __('print.about_canadia_content') !!}" 
+                        get_help_title ="{{ __('print.get_help_title') }}"            
+                        get_help_cal_center="{{ __('print.get_help_cal_center') }}"    
+                        get_help_chat_content="{{ __('print.get_help_chat_content') }}"   
+                        get_help_chart_text="{{ __('print.get_help_chart_text') }}"  
+                        get_help_canadia_menu="{{ __('print.get_help_canadia_menu') }}" 
+                        about_canadia_menu="{{ __('print.about_canadia_menu') }}" 
+                        head_title="{{ __('print.joint_member_account') }}">                            
+                    </menu-component>
                     <ul class="navbar-nav" id="lang">
                         @foreach (config('app.available_locales') as $locale => $value)
                             <li class="nav-item" id="{{ $locale }}">
@@ -74,7 +84,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Your phone number ?</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{ __('print.your_phone_number_check') }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -89,7 +99,7 @@
             <div class="form-row">
                 <div class="col-md-12 form-group">
                     {!! Form::text('phone_number', null, ['class'=>'form-control']) !!}
-                    <small>Note : Keep it blank for field the form</small>
+                    <small>{{ __('print.test_menu_note_') }}</small>
                 </div>
             </div>
             <div class="form-row">

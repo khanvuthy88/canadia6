@@ -15,8 +15,8 @@ const mix = require('laravel-mix');
    // .sass('resources/sass/lang.scss', 'public/css');
    // .sass('resources/sass/custom-admin.scss','public/css');
 
-mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css')
-   .sass("resources/sass/front.scss", 'public/css')
-   .sass('resources/sass/lang.scss', 'public/css')
-   .sass('resources/sass/custom-admin.scss','public/css');
+mix.js('resources/js/app.js', 'public/js');
+   // .sass('resources/sass/app.scss', 'public/css')
+   // .sass("resources/sass/front.scss", 'public/css')
+   // .sass('resources/sass/lang.scss', 'public/css')
+   // .sass('resources/sass/custom-admin.scss','public/css');
