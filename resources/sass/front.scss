@@ -162,6 +162,7 @@ $canadia-secondary: #00bcd4;
 			background-color: $canadia-secondary;
 		}
 		a{
+			color: #ced4da;
 			&:hover{
 				border:0px;
 			}
@@ -189,5 +190,53 @@ $canadia-secondary: #00bcd4;
 		// &:last-child{
 		// 	background-color:$canadia-secondary;
 		// }
+	}
+}
+
+#account_form_model{
+	width: 100%;
+	.modal-body{
+		padding:0px;
+		ul{
+			li{
+				padding: 15px;
+				a{
+					text-decoration: none;
+					text-transform: uppercase;
+					padding-bottom: 1rem;
+					&.active{
+						border-bottom: 2px solid #ef5350;
+						color: $canadia-primary;
+					}					
+				}
+			}
+		}
+		table{
+			&.account-condition{
+				tbody{
+					tr{
+						td{							
+							ul{
+								li{
+									padding: 0px;
+								}
+							}							
+						}
+					}
+				}
+			}			
+		}
+		.tab-content{
+			#current_plus_feature{
+				tr{
+					td{
+						&:first-child{
+							width: 5%;
+						}
+					}
+				}
+			}
+		}
+		
 	}
 }
